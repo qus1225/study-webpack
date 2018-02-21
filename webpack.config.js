@@ -1,12 +1,15 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: `${__dirname}/src/index.js`,
+  entry: {
+    app: './src/index.js',
+    print: './src/print.js'
+  },
   output: {
     path: `${__dirname}/dist`,
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
-
   module: {
     rules: [
       {
@@ -24,12 +27,9 @@ module.exports = {
       }
     ],
   },
-
-  plugins: process.argv.indexOf('-p') === -1 ? [] : [
-    new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: false,
-      },
-    }),
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Output Management'
+    })
   ],
 };
