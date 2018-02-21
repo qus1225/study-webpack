@@ -1,0 +1,16 @@
+{
+  "name": "study-webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.11.0"
+  },
+  "dependencies": {},
+  "keywords": [],
+  "description": ""
+}
